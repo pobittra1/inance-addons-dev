@@ -85,6 +85,16 @@ class heroSection_Widget extends \Elementor\Widget_Base
 			]
 		);
 
+		// for control logo image
+		$this->add_control(
+			'logo_img',
+			[
+				'label' => esc_html__('Logo Image', 'heroSection-widget'),
+				'type' => \Elementor\Controls_Manager::MEDIA,
+				'default' => ['url' => ''],
+			]
+		);
+
 
 		// for control hero desc
 		$this->add_control(
