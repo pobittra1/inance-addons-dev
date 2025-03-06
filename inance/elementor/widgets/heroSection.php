@@ -116,7 +116,6 @@ class heroSection_Widget extends \Elementor\Widget_Base
 				'label_block' => true,
 			]
 		);
-
 		// for hero button URL
 		$this->add_control(
 			'hero_button_url',
@@ -136,9 +135,19 @@ class heroSection_Widget extends \Elementor\Widget_Base
 			[
 				'label' => esc_html__('Hero Button Color', 'heroSection-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
-				'default' => '#FF0000',
 				'selectors' => [
-					'{{WRAPPER}} .hero_area .detail-box a' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .hero_area .detail-box a' => 'background-color: {{VALUE}}',
+				],
+			]
+		);
+		// for hero text color
+		$this->add_control(
+			'text_color',
+			[
+				'label' => esc_html__('Hero Color Color', 'heroSection-widget'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .hero_area .detail-box a' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -213,7 +222,7 @@ class heroSection_Widget extends \Elementor\Widget_Base
 		$hero_desc = $settings['hero_desc'];
 		$hero_button_text = $settings['hero_button_text'];
 		$hero_button_url = $settings['hero_button_url'];
-		$hero_button_color = $settings['hero_button_color'];
+		$hero_button_color = $settings['hero_button_color'] ?? '';
 		$hero_image = $settings['hero_image'];
 		$hero_cards = $settings['hero_cards'];
 ?>
