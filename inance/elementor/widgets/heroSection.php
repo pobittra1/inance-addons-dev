@@ -17,7 +17,7 @@ class heroSection_Widget extends \Elementor\Widget_Base
 
 	public function get_icon(): string
 	{
-		return 'eicon-banner';
+		return 'eicon-post';
 	}
 
 	public function get_categories(): array
